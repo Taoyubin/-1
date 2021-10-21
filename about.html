@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <!--                            内容宽度=设备宽度   缩放比例为1         最大缩放比例      是否允许用户缩放    -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width;inital
+				-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <!--[if lt IE 9]>
+	 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> 
+	<![endif]-->
+    <title>关于我们</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/about/about.css" />
+    <!-- title小图标 -->
+    <link rel="shortcut icon" href="favicon/bitbug_favicon.ico" />
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/about/about.js"></script>
+    <!-- 页面滚动显示动画JS -->
+    <script src="js/scrollReveal.js" type="text/javascript" charset="utf-8"></script>
+    <!-- 播放视频 -->
+    <script src="js/about/tvp.player.js" type="text/javascript" charset="utf-8"></script>
+    <!-- 轻量级数字动画插件 -->
+    <script src="js/about/waypoints.min.js" charset="utf-8"></script>
+    <script src="js/about/countUp.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <header class="head-wrap" id="header">
+
+        <div class="width-align clearfix">
+            <a class="fl logo" href="index.html"><img src="images/logo.png"></a>
+            <ul class="fr nav-right clearfix">
+                <li class="search-li" onclick="window.location.href='search.html'"></li>
+                <li>EN</li>
+                <li class="list-li switch-sidenav"></li>
+            </ul>
+            <ul class="fr nav-wrap clearfix">
+                <li><a href="index.html">首页</a></li>
+                <li class="active">
+                    <a href="about.html" target="_self">关于我们<b></b></a>
+                    <div class="second-nav-wrap ">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">企业简介</a>
+                            <a href="##">文化与价值观</a>
+                            <a href="##">人才招聘</a>
+                            <a href="##">联系我们</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="education.html" target="_self">教育科技<b></b></a>
+                    <div class="second-nav-wrap w2">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">教育科技</a>
+                            <a href="##">未来之星</a>
+                            <a href="javascript:;">GES未来教育大会</a>
+                            <a href="index3.html">TI教育智能大会</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="strategy.html" target="_self">战略投资<b></b></a>
+                    <div class="second-nav-wrap ">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">投资策略</a>
+                            <a href="##">投资方向</a>
+                            <a href="##">投资优势</a>
+                            <a href="##">投资品牌</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="social.html" target="_self">社会责任<b></b></a>
+                    <div class="second-nav-wrap w2">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">好未来公益基金会</a>
+                            <a href="##">希望在线</a>
+                            <a href="##">北京兴邦公益基金会</a>
+                            <a href="##">情系远山公益基金会</a>
+                            <a href="##">好未来人在行动</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a target="_self" href="news1.html">新闻中心</a>
+                    <div class="second-nav-wrap">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">企业动态</a>
+                            <a href="##">深度报道</a>
+                            <a href="##">党建专栏</a>
+                            <a href="##">公益新闻</a>
+                            <a href="##">视频专区</a>
+                            <a href="##">采购信息公示</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <span class="fr nav-menu"></span>
+        </div>
+    </header>
+    <!-- 侧边栏导航-->
+    <div class="side-nav-wrap"></div>
+    <div class="side-nav">
+        <div class="side-nav-h1 clearfix"><span class="fl">网站地图</span><i class="fr close"></i></div>
+        <div class="side-con clearfix">
+            <dl class='w200'>
+                <dt><a target="_self" href="about.html">关于我们</a></dt>
+                <dd><a target="_self" href="##">企业简介</a></dd>
+
+                <dd><a target="_self" href="##">文化与价值观</a></dd>
+
+                <dd><a target="_self" href="##">人才招聘</a></dd>
+
+                <dd><a target="_self" href="##">联系我们</a></dd>
+
+            </dl>
+            <dl class='w160'>
+                <dt><a target="_self" href="education.html">教育科技</a></dt>
+                <dd><a target="_self" href="##">教育科技</a></dd>
+
+                <dd><a target="_self" href="##">未来之星</a></dd>
+
+                <dd><a target="_self" href="javascript:;">GES未来教育大会</a></dd>
+
+                <dd><a target="_self" href="##">TI教育智能大会</a></dd>
+
+            </dl>
+            <dl class=''>
+                <dt><a target="_self" href="##">投资者关系</a></dt>
+                <dd><a target="_self" href="##">公司治理</a></dd>
+
+                <dd><a target="_self" href="#">新闻及活动</a></dd>
+
+                <dd><a target="_self" href="#">股票信息</a></dd>
+
+                <dd><a target="_self" href="#">财务信息</a></dd>
+
+            </dl>
+            <dl class='w200'>
+                <dt><a target="_self" href="strategy.html">战略投资</a></dt>
+                <dd><a target="_self" href="##">投资策略</a></dd>
+
+                <dd><a target="_self" href="##">投资方向</a></dd>
+
+                <dd><a target="_self" href="##">投资优势</a></dd>
+
+                <dd><a target="_self" href="##">投资品牌</a></dd>
+
+            </dl>
+            <dl class='w160'>
+                <dt><a target="_self" href="social.html">社会责任</a></dt>
+                <dd><a target="_self" href="javascript:;">好未来公益基金会</a></dd>
+
+                <dd><a target="_self" href="javascript:;">希望在线</a></dd>
+
+                <dd><a target="_self" href="##">北京兴邦公益基金会</a></dd>
+
+                <dd><a target="_self" href="javascript:;">情系远山公益基金会</a></dd>
+
+                <dd><a target="_self" href="##">好未来人在行动</a></dd>
+
+            </dl>
+            <dl class=''>
+                <dt><a target="_self" href="##">诚聘英才</a></dt>
+                <dd><a target="_self" href="##">社会招聘</a></dd>
+
+                <dd><a target="_self" href="##">校园招聘</a></dd>
+
+                <dd><a target="_self" href="##">GlobalTalent</a></dd>
+
+            </dl>
+            <dl class="w200">
+                <dt><a href="##">法律声明</a></dt>
+                <dt><a href="##">职业准则</a></dt>
+                <dt><a href="##">廉政合规</a></dt>
+            </dl>
+
+        </div>
+    </div>
+
+    <!-- ipad 手机端-->
+    <div class="modal-bg"></div>
+    <div class="modal-warp">
+        <ul>
+            <li><a href="index.html" class="modal-a1">首页</a></li>
+            <li>
+                <span><a href="about.html" class="modal-a1">关于我们</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">企业介绍</a>
+                    <a href="##">文化与价值观</a>
+                    <a href="##">人才招聘</a>
+                    <a href="##">联系我们</a>
+                </div>
+            </li>
+            <li>
+                <span><a href="education.html" class="modal-a1">教育科技</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">教育科技</a>
+                    <a href="##">未来之星</a>
+                    <a href="##">GES未来教育大会</a>
+                    <a href="##">TI教育智能大会</a>
+                </div>
+            </li>
+            <li>
+                <span><a href="strategy.html" class="modal-a1">战略投资</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">投资策略</a>
+                    <a href="##">投资方向</a>
+                    <a href="##">投资优势</a>
+                    <a href="##">投资品牌</a>
+                </div>
+            </li>
+            <li>
+                <span><a href="social.html" class="modal-a1">社会责任</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">好未来公益基金会</a>
+                    <a href="##">希望在线</a>
+                    <a href="##">北京兴邦公益基金会</a>
+                    <a href="##">情系远山公益基金会</a>
+                    <a href="##">好未来人在行动</a>
+                </div>
+            </li>
+            <li>
+                <span><a href="news1.html" class="modal-a1">新闻中心</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">企业动态</a>
+                    <a href="##">深度报告</a>
+                    <a href="##">党建专栏</a>
+                    <a href="##">公益新闻</a>
+                    <a href="##">视频专区</a>
+                    <a href="##">采购信息公示</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- 关于好未来-->
+    <div class="banner">
+        <img src="css/about/about-banner1.jpg" class="banimg">
+        <div class="width-align">
+            <div class="bantxt" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                <h2>关于好未来</h2>
+                <p>about tal</p>
+            </div>
+        </div>
+    </div>
+
+    <!--公司介绍 -->
+    <div class="about-description clearfix" style="padding: 74px 0 0;background: url(css/about/about-highfloor.png) no-repeat right bottom/760px;">
+        <div class="width-align">
+            <div class="limit-wid">
+                <p class="about-des" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                    好未来（NYSE：TAL）是一家以智慧教育和开放平台为主体，在全球范围内服务公办教育，助力民办教育，探索未来教育新模式的科技教育公司。 好未来的前身学而思成立于2003年，2010年在美国纽交所正式挂牌交易。好未来以“爱和科技让教育更美好”为使命，致力成为受尊敬的教育机构。
+
+                </p>
+                <p class="about-des wid2" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+
+                    好未来已构建起从工具、平台到内容的多元化教育生态，满足从-1岁到24岁各年龄段人群个性化学习需求。目前，好未来旗下拥有学而思培优、学而思网校、学而思1对1、学而思国际、励步、好未来轻舟、晓黑板、妈妈帮等品牌，并战略投资了赫石少儿体能等多个品牌。集团业务覆盖素质教育、K12课外教育、大学生服务、母婴服务、海外留学等领域。
+                </p>
+                <p class="about-des wid3" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                    此外，好未来通过智慧教育业务板块，整合集团内外教育科技生态，秉持“教学教研是核心,信息化工具是杠杆,学校制度是保障”的理念，助力区域及公立学校教育信息化建设，服务公办教育发展。 通过教育开放平台，好未来开放最新教研、技术、教学成果，打造未来魔法校、直播云等产品及服务，助力民办教育行业成长。此外好未来还联合发起教育行业学习交流平台未来之星，并创办GES未来教育大会。 通过技术中台建设，好未来集合AI研究院、大数据中台、脑认知中台、直播中台等多个研发团队，探索教育前沿科技和未来教育新模式。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 老板-->
+    <div class="boss">
+        <div class="width-align clearfix">
+            <div class="l fl" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                <img src="css/about/boss.jpg">
+            </div>
+            <div class="r fl" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                <h2 data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">张邦鑫</h2>
+                <h3 data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">好未来创始人兼CEO</h3>
+                <p data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                    好未来创始人兼CEO，2003年在北大生命科学学院读研期间兼职做家教，因学生进步较大，家长口口相传形成班课，于是创办了学而思。2010年10月，学而思正式登陆美国纽交所。2013年8月，集团更名为好未来，以“爱和科技让教育更美好”为使命，致力于让每个人都能享受优质公平的教育。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 发展历程-->
+    <div class="develop" style="padding: 75px 0 0px;">
+        <div class="width-align clearfix">
+            <div class="tit">
+                <h2 data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">发展历程</h2>
+                <p data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                    <em>Development History</em>
+                </p>
+            </div>
+            <div class="position-relative public-vd about-timeline" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                <div class="swiper-container swiper-container-horizontal">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" data-year="2021">
+                            <div class="limit-wid clearfix">
+                                <span class="fl year">2021</span>
+                                <div class="fl text">
+                                    <p><a href="#">2021年3月底，顺顺留学品牌战略升级为“轻舟留学”。</a></p>
+                                </div>
+                                <a class="fl about-more" href="#">查看更多<em>>></em></a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-year="2020">
+                            <div class="limit-wid clearfix">
+                                <span class="fl year">2020</span>
+                                <div class="fl text">
+                                    <p><a href="#">联合国教科文组织和好未来教育集团签署战略合作协议，在全球范围内建立以互联网和AI等技术为基础的、具备危机应对能力的开放性在线学习系统</a>
+                                    </p>
+
+                                    <p><a href="#">好未来斩获国际人工智能顶级会议NeurIPS 2020竞赛冠军</a></p>
+
+                                    <p><a href="#">《2020区块链应用蓝皮书》发布，好未来主导教育领域专项研究</a></p>
+
+                                    <p><a href="#">清华大学与学而思共建就业实践基地</a></p>
+
+                                    <p><a href="#">学而思网校受邀入选中央广播电视总台“品牌强国工程”</a></p>
+
+                                    <p><a href="#">《人民日报》发布文章点赞好未来双师课堂</a></p>
+
+                                    <p><a href="#">好未来算法研究员入选2020“北京市科技新星计划”</a></p>
+
+                                    <p><a href="#">《中国互联网企业综合实力研究报告（2020）》发布，学而思网校连续三年入围中国互联网百强</a></p>
+
+                                    <p><a href="#">学而思网校获评“2020年度责任企业”</a></p>
+
+                                    <p><a href="#">北京大学与学而思签约人才战略合作</a></p>
+
+                                    <p><a href="#">学而思网校成为“中国航天事业战略合作伙伴”</a></p>
+
+                                    <p><a href="#">学而思网校与北大生科达成战略合作，携手致力青少年生命科学普及事业</a></p>
+
+                                    <p><a href="#">学而思荣膺BrandZ品牌价值增速第一名</a></p>
+
+                                    <p><a href="#">学而思网校携手航天英雄杨利伟，给孩子带来公益航天课</a></p>
+
+                                    <p><a href="#">学而思网校项目入选中央网信办网络扶贫典型案例</a></p>
+
+                                    <p><a href="#">北京市委书记蔡奇到好未来调研</a></p>
+
+                                    <p><a href="#">好未来作为唯一中国在线教育企业受邀出席全球服务贸易峰会</a></p>
+
+                                    <p><a href="#">好未来成立17周年，文化价值观迎来全新升级</a></p>
+
+                                    <p><a href="#">学而思网校AI老师系统入选联合国教科文组织教育信息化奖TOP5</a></p>
+
+                                    <p><a href="#">好未来AI团队斩获UbiComp 2020国际竞赛冠军</a></p>
+                                </div>
+                                <a class="fl about-more" href="#">查看更多<em>>></em></a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-year="2019">
+                            <div class="limit-wid clearfix">
+                                <span class="fl year">2019</span>
+                                <div class="fl text">
+
+                                    <p><a href="progress.html">好未来与中国排球超级联赛签署战略合作协议</a></p>
+
+                                    <p><a href="progress.html">学而思首家海外学术研究院落地英国剑桥</a></p>
+
+                                    <p><a href="progress.html">科技部宣布依托好未来建设智慧教育开放创新平台</a></p>
+
+                                    <p><a href="progress.html">好未来与北京师范大学签署战略合作协议</a></p>
+
+                                    <p><a href="progress.html">好未来受邀参加“中国—中东欧国家教育合作交流展”</a></p>
+
+                                    <p><a href="progress.html">好未来与联合国教科文组织签署战略合作协议，共同实施 "人工智能促进未来教育 " 计划</a></p>
+
+                                    <p><a href="progress.html">好未来获批成立行业首家博士后科研工作站</a></p>
+                                </div>
+                                <a class="fl about-more" href="progress.html">查看更多<em>>></em></a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-year="2018">
+                            <div class="limit-wid clearfix">
+                                <span class="fl year">2018</span>
+                                <div class="fl text">
+
+                                    <p><a href="progress.html">好未来被评为2018年中国互联网百强企业</a></p>
+
+                                    <p><a href="progress.html">好未来助力打造全球孔子学院首个AI汉语课堂，双方签署战略合作协议</a></p>
+
+                                    <p><a href="progress.html">上海市教委与好未来战略合作，共同推进教育信息化2.0建设</a></p>
+
+                                    <p><a href="progress.html">好未来宣布成立脑科学实验室</a></p>
+                                </div>
+                                <a class="fl about-more" href="progress.html">查看更多<em>>></em></a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-year="2017">
+                            <div class="limit-wid clearfix">
+                                <span class="fl year">2017</span>
+                                <div class="fl text">
+
+                                    <p><a href="progress.html">好未来入围BRANDZ中国品牌百强，并成为品牌价值增长较快的教育品牌</a></p>
+
+                                    <p><a href="progress.html">好未来与滴滴合作，推教育共享计划</a></p>
+                                </div>
+                                <a class="fl about-more" href="progress.html">查看更多<em>>></em></a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-year="2016">
+                            <div class="limit-wid clearfix">
+                                <span class="fl year">2016</span>
+                                <div class="fl text">
+                                    <p><a href="progress.html">好未来增持顺顺留学股份，顺顺留学加入好未来大家庭</a></p>
+
+                                    <p><a href="progress.html">好未来发布在线教育新产品“乐外教”，打造青少年外教优质品牌</a></p>
+
+                                    <p><a href="progress.html">学而思洛阳、南昌、福州、合肥、宁波、无锡六大分校成立</a></p>
+                                </div>
+                                <a class="fl about-more" href="progress.html">查看更多<em>>></em></a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-year="2015">
+                            <div class="limit-wid clearfix">
+                                <span class="fl year">2015</span>
+                                <div class="fl text">
+
+                                    <p><a href="progress.html">好未来全资收购励步英语</a></p>
+
+                                    <p><a href="progress.html">好未来发布高考帮和考研帮</a></p>
+                                </div>
+                                <a class="fl about-more" href="progress.html">查看更多<em>>></em></a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-year="2014">
+                            <div class="limit-wid clearfix">
+                                <span class="fl year">2014</span>
+                                <div class="fl text">
+
+                                    <p><a href="progress.html">E度教育网更名为家长帮，并推出“家长帮”APP</a></p>
+
+                                    <p><a href="progress.html">好未来推出海边直播</a></p>
+
+                                    <p><a href="progress.html">好未来推出教育CEO训练营——未来之星</a></p>
+
+                                    <p><a href="progress.html">学而思长沙、石家庄、济南、青岛四大分校成立</a></p>
+                                </div>
+                                <a class="fl about-more" href="progress.html">查看更多<em>>></em></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="swiper-button-prev about-timeline-prev" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s"></div>
+                <div class="swiper-button-next about-timeline-next" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s"></div>
+                <div class="swiper-pagination about-timeline-page swiper-pagination-clickable swiper-pagination-bullets" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                    <!-- <span class="swiper-pagination-bullet"></span>
+							<span class="swiper-pagination-bullet"></span>
+							<span class="swiper-pagination-bullet"></span>
+							<span class="swiper-pagination-bullet"></span>
+							<span class="swiper-pagination-bullet"></span>
+							<span class="swiper-pagination-bullet"></span>
+							<span class="swiper-pagination-bullet"></span>
+							<span class="swiper-pagination-bullet"></span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 品牌故事 -->
+    <div class="about-history">
+        <div class="width-align">
+            <div class="cpc-wrap">
+                <div class="tit">
+                    <h2 data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">品牌故事</h2>
+                    <p data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s"><em>TAL'S STORY</em></p>
+                </div>
+                <div class="width-align clearfix">
+                    <div class="v_top">
+                        <div class="video_t">
+                            <img src="images/about/videoimg.jpg">
+                        </div>
+                        <div class="v-mask playvideo-menu" data-url="Video/about.mp4" data-title="品牌故事">
+                            <img src="images/about/play1.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 党组织建设 -->
+    <div class="about-cpc position-relative">
+        <div class="width-align position-relative">
+            <div class="cpc-wrap">
+                <div class="tit about-tit">
+                    <h2 data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">党组织建设</h2>
+                    <p data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s"><em>PARTY ORGANIZATION
+							BUILDING</em></p>
+                </div>
+                <div class="description" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                    <p>好未来集团于2014年5月获得批准成立第一个党支部，2017年8月升级为集团党委。好未来党委自成立以来，坚持以习近平新时代中国特色社会主义思想为指导，秉承党建工作是企业发展的“红色引擎”这一核心思想，积极践行“负责任才有好未来”的理念，大力提高企业党员员工对组织的认同感。2017年至2018年，连续两年被海淀园工委评为“先进基层党组织”，以及“党建创新示范项目”，2019年，被评为“海淀区先进基层党组织”。
+                    </p>
+                </div>
+            </div>
+            <ul class="num-detail clearfix" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                <li><em class="counter">10000</em><b></b><i>人</i><span>在职党员数近</span></li>
+                <li><em class="counter">20</em><i>%</i><span>党员员工占比约</span></li>
+                <li><em class="counter">30</em><i>个</i><span>党组织</span></li>
+                <li><em class="counter">23</em><i>个</i><span>遍布城市</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- @视频弹出 -->
+    <div class="layuiBg1"></div>
+    <div class="layuiBox1">
+        <div class="layuivideo">
+            <div class="layerClose"></div>
+            <div class="play-vi">
+                <div id="playpoint">
+
+                </div>
+            </div>
+            <p id="videotitle">梦的初心</p>
+        </div>
+    </div>
+
+
+    <footer class="foot-wrap bgf2">
+        <div class="width-align">
+            <div class="clearfix foot-ul">
+                <dl>
+                    <dt><a href="about.html" target="_self">关于我们</a></dt>
+                    <dd><a href="about.html" target="_self">企业简介</a></dd>
+                    <dd><a href="##" target="_self">文化与价值观</a></dd>
+                    <dd><a href="##" target="_self">人才招聘</a></dd>
+                    <dd><a href="##" target="_self">联系我们</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="education.html" target="_self">教育科技</a></dt>
+                    <dd><a href="##" target="_self">教育科技</a></dd>
+                    <dd><a href="##" target="_self">未来之星</a></dd>
+                    <dd><a href="##" target="_self">GES未来教育大会</a></dd>
+                    <dd><a href="##" target="_self">TI教育智能大会</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="strategy.html" target="_self">投资者关系</a></dt>
+                    <dd><a href="##" target="_self">公司治理</a></dd>
+                    <dd><a href="##" target="_self">新闻及活动</a></dd>
+                    <dd><a href="##" target="_self">股票信息</a></dd>
+                    <dd><a href="##" target="_self">财务信息</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="social.html" target="_self">社会责任</a></dt>
+                    <dd><a href="##" target="_self">好未来公益基金会</a></dd>
+                    <dd><a href="##" target="_self">希望在线</a></dd>
+                    <dd><a href="##" target="_self">北京兴邦公益基金会</a></dd>
+                    <dd><a href="##" target="_self">情系远山公益基金会</a></dd>
+                    <dd><a href="##" target="_self">好未来人在行动</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="##" target="_self">诚聘英才</a></dt>
+                    <dd><a href="##" target="_self">社会招聘</a></dd>
+                    <dd><a href="##" target="_self">校园招聘</a></dd>
+                    <dd><a href="##" target="_self">GlobalTalent</a></dd>
+                </dl>
+                <dl>
+                    <dt><a target="_self" href="news1.html">新闻中心</a></dt>
+                    <dd><a href="##">企业动态</a></dd>
+                    <dd><a href="##">深度报道</a></dd>
+                    <dd><a href="##">党建专栏</a></dd>
+                    <dd><a href="##">公益新闻</a></dd>
+                    <dd><a href="##">视频专区</a></dd>
+                    <dd><a href="##">采购信息公示</a></dd>
+                </dl>
+            </div>
+            <div class="lest-foot clearfix">
+                <div class="fl">
+                    <a style="padding: 0 10px;" href="#" target="_self">投资者关系</a>| <a style="padding: 0 10px;" href="#" target="_self">法律声明</a>| <a style="padding: 0 10px;" href="#" target="_self">职业准则</a>| <a style="padding: 0 10px;" href="#" target="_self">好未来集团举报制度</a>|
+                    <a></a>
+                </div>
+                <div class="fr" style="margin-right: 20px;">
+                    <a style="color:#666; font-size:14px" class="fl">Copyright © 2019 好未来版权所有 北京世纪好未来教育科技有限公司 京公网安备
+						11010802021404号</a><a href="#" style="color:#666; font-size:14px" target="_self" class="fl">&nbsp;京ICP备13017119号-2</a>
+                    <div class="fl last-l" style="text-align: center;">
+                        <a href="#" class="icon-wchat position-relative">
+                            <span class="wechatT">
+								<img class="weixins" src="images/weixin.jpg"><em class="ico"></em>
+								<p>欢迎关注好未来公众号<br>了解更多前沿教育资讯哦！</p>
+							</span>
+                        </a>
+                        <a href="#" class="icon-sina"></a>
+                        <a href="#" class="icon-wchat position-relative" style="background-image: url(images/icon-dy.png);">
+                            <span class="wechatT">
+								<img class="weixins" src="images/dy.jpg"><em class="ico"></em>
+								<p>欢迎关注好未来抖音号<br>了解更多前沿教育资讯哦！</p>
+							</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="#gotop" class="gotop bgf4"></a>
+
+</body>
+<!-- scrollReveal 滑动 -->
+
+<script>
+    (function() {
+        window.scrollReveal = new scrollReveal({
+            reset: true,
+            move: '50px'
+        });
+    })();
+</script>
+
+<script type="text/javascript">
+    $('.counter').countUp();
+</script>
+
+</html>

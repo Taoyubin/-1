@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <!--                            内容宽度=设备宽度   缩放比例为1         最大缩放比例      是否允许用户缩放    -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width;inital
+				-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <!--[if lt IE 9]>
+	 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> 
+	<![endif]-->
+    <title>搜索页</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/search/search.css" />
+    <!-- title小图标 -->
+    <link rel="shortcut icon" href="favicon/bitbug_favicon.ico" />
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/search/search.js"></script>
+    <!-- 页面滚动显示动画JS -->
+    <script src="js/scrollReveal.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<script>
+    $(function() {
+        $.getJSON('js/search/search.json', function(date) {
+            // 渲染至页面
+            $.each(date, function(i, v) {
+                var $li = $("<li class='clearfix content' data-scroll-reveal='wait 0.15s, then enter bottom and move 40px over 1s'></li>");
+                var $h4 = $("<h4><a href='#'>" + v.title + "</a></h4>");
+                $h4.children('a').html(v.title);
+                $li.append($h4);
+                $('.news-list').append($li);
+            })
+            var num = $('.content').length; //获得所有内容Li的数值长度33
+            if (parseInt(num / 10) > 0) {
+                var $ul = $('<ul class="clear news-fyq"></ul>');
+                $('.box').append($ul);
+                $ul.append("<li class='fl news-prev jj'>首页</li>");
+                // 创建分页按钮并给每10个li包裹一个父元素div
+
+                for (var i = 0; i < Math.ceil(num / 10); i++) {
+                    var $li = $("<li class='fl fyq'></li>")
+                    $li.html(i + 1);
+                    $ul.append($li);
+                    var start = i * 10;
+                    var end = start + 10;
+                    $('.content').slice(start, end).wrapAll("<div class='cb'></div>");
+                }
+                $ul.append("<li class='fl news-next jj'>尾页</li>");
+                $(".news-fyq:eq(1)").remove()
+                    // 默认显示其余隐藏
+                $('.news-list>.cb:first').show().siblings().hide();
+                $('.fyq:first').addClass('news-active').siblings().removeClass('news-active');
+                $(".fyq:gt(4)").hide()
+                    // 点击相对应的出现
+                $('.fyq').click(function() {
+                        var $index = $(this).index() - 1;
+                        var a = $index + 3;
+                        var b = a - 6;
+                        console.log($index)
+                        $(this).addClass('news-active').siblings().removeClass('news-active');
+                        $('.news-list>div.cb:eq(' + $index + ')').show().siblings().hide();
+                        if ($index >= 3 && $index < 8) {
+                            $(".fyq").hide();
+                            $(".fyq:lt(" + a + "):gt(" + b + ")").show();
+                        } else if ($index >= 8) {
+                            $(".fyq").hide();
+                            $(".fyq:lt(11):gt(4)").show();
+                        } else {
+                            $(".fyq").hide();
+                            $(".fyq:lt(5)").show();
+                        }
+                    })
+                    // 首页
+                $('.news-prev').click(function() {
+                        $(".fyq").hide();
+                        $(".fyq:lt(5)").show();
+                        $('.fyq:first').addClass('news-active').siblings().removeClass('news-active');
+                        $('.news-list>.cb:first').show().siblings().hide()
+                    })
+                    // 尾页
+                $('.news-next').click(function() {
+                    $(".fyq").hide();
+                    $(".fyq:lt(11):gt(4)").show();
+                    $('.fyq:last').addClass('news-active').siblings().removeClass('news-active');
+                    $('.news-list>.cb:first').show().siblings().hide()
+                })
+            }
+        })
+
+
+
+        //搜索
+        $("#inp").keyup(function() {
+            $(".cb .content").hide();
+            var $text = $(this).val();
+            var $oli = $(".cb li").find("a:contains('" + $text + "')").parents("li").show();
+            console.log($oli)
+        })
+        $("#inp").blur(function() {
+            $(".cb .content").show()
+            $(this).val('')
+        })
+
+
+    })
+</script>
+
+<body>
+    <!-- 头部导航 -->
+    <header class="head-wrap" id="header">
+
+        <div class="width-align clearfix">
+            <a class="fl logo" href="index.html"><img src="images/logo.png"></a>
+            <ul class="fr nav-right clearfix">
+                <li class="search-li" onclick="window.location.href='search.html'"></li>
+                <li>EN</li>
+                <li class="list-li switch-sidenav"></li>
+            </ul>
+            <ul class="fr nav-wrap clearfix">
+                <li><a href="index.html">首页</a></li>
+                <li>
+                    <a href="about.html" target="_self">关于我们<b></b></a>
+                    <div class="second-nav-wrap ">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">企业简介</a>
+                            <a href="##">文化与价值观</a>
+                            <a href="##">人才招聘</a>
+                            <a href="##">联系我们</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="education.html" target="_self">教育科技<b></b></a>
+                    <div class="second-nav-wrap w2">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">教育科技</a>
+                            <a href="##">未来之星</a>
+                            <a href="javascript:;">GES未来教育大会</a>
+                            <a href="index3.html">TI教育智能大会</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="strategy.html" target="_self">战略投资<b></b></a>
+                    <div class="second-nav-wrap ">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">投资策略</a>
+                            <a href="##">投资方向</a>
+                            <a href="##">投资优势</a>
+                            <a href="##">投资品牌</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="social.html" target="_self">社会责任<b></b></a>
+                    <div class="second-nav-wrap w2">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">好未来公益基金会</a>
+                            <a href="##">希望在线</a>
+                            <a href="##">北京兴邦公益基金会</a>
+                            <a href="##">情系远山公益基金会</a>
+                            <a href="##">好未来人在行动</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a target="_self" href="news1.html">新闻中心</a>
+                    <div class="second-nav-wrap">
+                        <i></i>
+                        <div class="second-nav">
+                            <a href="##">企业动态</a>
+                            <a href="##">深度报道</a>
+                            <a href="##">党建专栏</a>
+                            <a href="##">公益新闻</a>
+                            <a href="##">视频专区</a>
+                            <a href="##">采购信息公示</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <span class="fr nav-menu"></span>
+        </div>
+    </header>
+    <!-- 侧边栏导航-->
+    <div class="side-nav-wrap"></div>
+    <div class="side-nav">
+        <div class="side-nav-h1 clearfix"><span class="fl">网站地图</span><i class="fr close"></i></div>
+        <div class="side-con clearfix">
+            <dl class='w200'>
+                <dt><a target="_self" href="about.html">关于我们</a></dt>
+                <dd><a target="_self" href="##">企业简介</a></dd>
+
+                <dd><a target="_self" href="##">文化与价值观</a></dd>
+
+                <dd><a target="_self" href="##">人才招聘</a></dd>
+
+                <dd><a target="_self" href="##">联系我们</a></dd>
+
+            </dl>
+            <dl class='w160'>
+                <dt><a target="_self" href="education.html">教育科技</a></dt>
+                <dd><a target="_self" href="education.html">教育科技</a></dd>
+
+                <dd><a target="_self" href="##">未来之星</a></dd>
+
+                <dd><a target="_self" href="javascript:;">GES未来教育大会</a></dd>
+
+                <dd><a target="_self" href="##">TI教育智能大会</a></dd>
+
+            </dl>
+            <dl class=''>
+                <dt><a target="_self" href="strategy.html">投资者关系</a></dt>
+                <dd><a target="_self" href="##">公司治理</a></dd>
+
+                <dd><a target="_self" href="##">新闻及活动</a></dd>
+
+                <dd><a target="_self" href="##">股票信息</a></dd>
+
+                <dd><a target="_self" href="##">财务信息</a></dd>
+
+            </dl>
+            <dl class='w200'>
+                <dt><a target="_self" href="strategy.html">战略投资</a></dt>
+                <dd><a target="_self" href="##">投资策略</a></dd>
+
+                <dd><a target="_self" href="##">投资方向</a></dd>
+
+                <dd><a target="_self" href="##">投资优势</a></dd>
+
+                <dd><a target="_self" href="##">投资品牌</a></dd>
+
+            </dl>
+            <dl class='w160'>
+                <dt><a target="_self" href="social.html">社会责任</a></dt>
+                <dd><a target="_self" href="javascript:;">好未来公益基金会</a></dd>
+
+                <dd><a target="_self" href="javascript:;">希望在线</a></dd>
+
+                <dd><a target="_self" href="##">北京兴邦公益基金会</a></dd>
+
+                <dd><a target="_self" href="javascript:;">情系远山公益基金会</a></dd>
+
+                <dd><a target="_self" href="##">好未来人在行动</a></dd>
+
+            </dl>
+            <dl class=''>
+                <dt><a target="_self" href="##">诚聘英才</a></dt>
+                <dd><a target="_self" href="##">社会招聘</a></dd>
+
+                <dd><a target="_self" href="##">校园招聘</a></dd>
+
+                <dd><a target="_self" href="##">GlobalTalent</a></dd>
+
+            </dl>
+            <dl class="w200">
+                <dt><a href="#">法律声明</a></dt>
+                <dt><a href="#">职业准则</a></dt>
+                <dt><a href="#">廉政合规</a></dt>
+            </dl>
+
+        </div>
+    </div>
+
+    <!-- ipad 手机端-->
+    <div class="modal-bg"></div>
+    <div class="modal-warp">
+        <ul>
+            <li><a href="index.html" class="modal-a1">首页</a></li>
+            <li>
+                <span><a href="about.html" class="modal-a1">关于我们</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">企业介绍</a>
+                    <a href="##">文化与价值观</a>
+                    <a href="##">人才招聘</a>
+                    <a href="##">联系我们</a>
+                </div>
+            </li>
+            <li>
+                <span><a href="education.html" class="modal-a1">教育科技</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">教育科技</a>
+                    <a href="##">未来之星</a>
+                    <a href="##">GES未来教育大会</a>
+                    <a href="##">TI教育智能大会</a>
+                </div>
+            </li>
+            <li>
+                <span><a href="strategy.html" class="modal-a1">战略投资</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">投资策略</a>
+                    <a href="##">投资方向</a>
+                    <a href="##">投资优势</a>
+                    <a href="##">投资品牌</a>
+                </div>
+            </li>
+            <li>
+                <span><a href="social.html" class="modal-a1">社会责任</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">好未来公益基金会</a>
+                    <a href="##">希望在线</a>
+                    <a href="##">北京兴邦公益基金会</a>
+                    <a href="##">情系远山公益基金会</a>
+                    <a href="##">好未来人在行动</a>
+                </div>
+            </li>
+            <li>
+                <span><a href="news1.html" class="modal-a1">新闻中心</a><i></i></span>
+                <div class="menuson">
+                    <a href="##">企业动态</a>
+                    <a href="##">深度报告</a>
+                    <a href="##">党建专栏</a>
+                    <a href="##">公益新闻</a>
+                    <a href="##">视频专区</a>
+                    <a href="##">采购信息公示</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- 新闻中心 -->
+    <div class="search-wrap">
+        <div class="width-align">
+            <div class="search-tit" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                <h3>新闻资讯搜索</h3>
+            </div>
+            <div class="search-form" data-scroll-reveal="wait 0.15s, then enter bottom and move 40px over 1s">
+                <form class="clearfix">
+                    <input type="submit" class="sub" value="" />
+                    <input type="text" class="inp" placeholder="请输入搜索关键词……" name="pnaem" id="inp" />
+                </form>
+            </div>
+            <div class="box">
+                <ul class="news-list clearfix">
+                    <!-- <li class="clear fl ">
+						<h4>
+							<a href="##">联合国教科文组织驻华代表处主任夏泽翰教授访问好未来集团</a>
+						</h4>
+				   </li> -->
+
+                </ul>
+
+                <!-- <ul class="news-fyq">
+					<li class="news-prev">首页</li>
+					<li class="btn">
+
+					</li>
+					<li class="news-next">末页</li>
+					</ul> -->
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- 尾部-->
+    <footer class="foot-wrap bgf2">
+        <div class="width-align">
+            <div class="clearfix foot-ul">
+                <dl>
+                    <dt><a href="about.html" target="_self">关于我们</a></dt>
+                    <dd><a href="about.html" target="_self">企业简介</a></dd>
+                    <dd><a href="##" target="_self">文化与价值观</a></dd>
+                    <dd><a href="##" target="_self">人才招聘</a></dd>
+                    <dd><a href="##" target="_self">联系我们</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="education.html" target="_self">教育科技</a></dt>
+                    <dd><a href="##" target="_self">教育科技</a></dd>
+                    <dd><a href="##" target="_self">未来之星</a></dd>
+                    <dd><a href="##" target="_self">GES未来教育大会</a></dd>
+                    <dd><a href="##" target="_self">TI教育智能大会</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="strategy.html" target="_self">投资者关系</a></dt>
+                    <dd><a href="##" target="_self">公司治理</a></dd>
+                    <dd><a href="##" target="_self">新闻及活动</a></dd>
+                    <dd><a href="##" target="_self">股票信息</a></dd>
+                    <dd><a href="##" target="_self">财务信息</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="social.html" target="_self">社会责任</a></dt>
+                    <dd><a href="##" target="_self">好未来公益基金会</a></dd>
+                    <dd><a href="##" target="_self">希望在线</a></dd>
+                    <dd><a href="##" target="_self">北京兴邦公益基金会</a></dd>
+                    <dd><a href="##" target="_self">情系远山公益基金会</a></dd>
+                    <dd><a href="##" target="_self">好未来人在行动</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="##" target="_self">诚聘英才</a></dt>
+                    <dd><a href="##" target="_self">社会招聘</a></dd>
+                    <dd><a href="##" target="_self">校园招聘</a></dd>
+                    <dd><a href="##" target="_self">GlobalTalent</a></dd>
+                </dl>
+                <dl>
+                    <dt><a target="_self" href="news1.html">新闻中心</a></dt>
+                    <dd><a href="##">企业动态</a></dd>
+                    <dd><a href="##">深度报道</a></dd>
+                    <dd><a href="##">党建专栏</a></dd>
+                    <dd><a href="##">公益新闻</a></dd>
+                    <dd><a href="##">视频专区</a></dd>
+                    <dd><a href="##">采购信息公示</a></dd>
+                </dl>
+            </div>
+            <div class="lest-foot clearfix">
+                <div class="fl">
+                    <a style="padding: 0 10px;" href="#" target="_self">投资者关系</a>| <a style="padding: 0 10px;" href="#" target="_self">法律声明</a>| <a style="padding: 0 10px;" href="#" target="_self">职业准则</a>| <a style="padding: 0 10px;" href="#" target="_self">好未来集团举报制度</a>|
+                    <a></a>
+                </div>
+                <div class="fr" style="margin-right: 20px;">
+                    <a style="color:#666; font-size:14px" class="fl">Copyright © 2019 好未来版权所有 北京世纪好未来教育科技有限公司 京公网安备
+						11010802021404号</a><a href="#" style="color:#666; font-size:14px" target="_self" class="fl">&nbsp;京ICP备13017119号-2</a>
+                    <div class="fl last-l" style="text-align: center;">
+                        <a href="#" class="icon-wchat position-relative">
+                            <span class="wechatT">
+								<img class="weixins" src="images/weixin.jpg"><em class="ico"></em>
+								<p>欢迎关注好未来公众号<br>了解更多前沿教育资讯哦！</p>
+							</span>
+                        </a>
+                        <a href="#" class="icon-sina"></a>
+                        <a href="#" class="icon-wchat position-relative" style="background-image: url(images/icon-dy.png);">
+                            <span class="wechatT">
+								<img class="weixins" src="images/dy.jpg"><em class="ico"></em>
+								<p>欢迎关注好未来抖音号<br>了解更多前沿教育资讯哦！</p>
+							</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="#gotop" class="gotop bgf4"></a>
+
+</body>
+
+
+<script>
+    (function() {
+        window.scrollReveal = new scrollReveal({
+            reset: true,
+            move: '50px'
+        });
+    })();
+</script>
+
+</html>
+
+
+</html>
